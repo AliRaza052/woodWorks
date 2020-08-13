@@ -51,6 +51,16 @@
 							</a>
                         </li>
 
+                        <li class="nav-item">
+							<a href="{{url('admin/category')}}" class="nav-link {{ request()->is('admin/category') ? 'active' : '' }}">
+								<i class="icon-file-text3"></i>
+								<span>
+									Category
+									{{-- <span class="d-block font-weight-normal opacity-50">No active orders</span> --}}
+								</span>
+							</a>
+                        </li>
+
 
                     	<!-- /main -->
 

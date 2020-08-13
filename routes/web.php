@@ -47,3 +47,7 @@ Route::get('admin/edit_product/{id}','ProductsController@editProduct')->name('ed
 Route::post('admin/update_product/{id}','ProductsController@updateproduct')->name('update_product');
 Route::get('admin/delete_product/{id}','ProductsController@deleteProduct')->name('delete_product');
 
+Route::get('admin/category','CategoryController@category');
+Route::get('admin/addcategory','CategoryController@addcategory')->name('addcategory');
+Route::post('admin/postcategory','CategoryController@addproductcategory')->name('postcategory');
+
