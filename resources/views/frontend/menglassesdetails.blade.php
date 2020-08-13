@@ -524,104 +524,138 @@
 
 		   			</div>
 	</div>
-	<section class="product-accessories clearfix">
+
+      <section class="product-accessories clearfix">
       <h3 class="h5 products-section-title">You might also like</h3>
       <div class="products">
         <div class="row">
-            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 col-sp-12 ajax_block_product">
-                <article class="product-miniature js-product-miniature" data-id-product="4" data-id-product-attribute="16" itemscope itemtype="http://schema.org/Product">
-                    <div class="thumbnail-container">
-                        <div class="product-image">
-                            <a href="../categories/4-16-the-adventure-begins-framed-poster.html#/19-dimension-40x60cm" class="thumbnail product-thumbnail">
-                                <img class="img-fluid" src = "{{asset('/')}}/header_assets/img/37-home_default/the-adventure-begins-framed-poster.jpg"alt = "Praesent maximus"data-full-size-image-url = "{{asset('/')}}/header_assets/img/37-large_default/the-adventure-begins-framed-poster.jpg">
-                                <span class="product-additional" data-idproduct="4">
+                      <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 col-sp-12 ajax_block_product">
+              
                                     
-                                </span>
-                            </a>
-                            <ul class="product-flags">
-                                <li class="product-flag new">New
-                                </li>
-                            </ul>
-                            <div class="quickview no-variants hidden-md-down">
-                                <a href="#" class="quick-view btn-product btn" data-link-action="quickview">
-                                    <span class="leo-quickview-bt-loading cssload-speeding-wheel"></span>
-                                    <span class="leo-quickview-bt-content">
-                                        <i class="icon-btn-product icon-quick-view material-icons">&#xE417;</i>
-                                        <span class="name-btn-product">Quick view</span>
-                                    </span>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="product-meta">
-                            <h3 class="h3 product-title" itemprop="name">
-                                <a href="../categories/4-16-the-adventure-begins-framed-poster.html#/19-dimension-40x60cm">Praesent maximus</a>
-                            </h3>
-                            <div class="product-price-and-shipping ">
-                                <span class="sr-only">Price</span>
-                                <span class="price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-                                    <span itemprop="priceCurrency" content="USD">
-                                    </span>
-                                    <span itemprop="price" content="29">$29.00</span>
-                                </span>
-                            </div>
-                            <div class="product-description-short" itemprop="description">Printed on rigid matt finish and smooth surface.
-                            </div>
-                            <div class="functional-buttons clearfix">
-                                <div class="compare">
-                                    <a class="leo-compare-button btn-primary btn-product btn" href="javascript:void(0)" data-id-product="4" title="Add to Compare">
-                                            <span class="leo-compare-bt-loading cssload-speeding-wheel">
-                                                
-                                            </span>
-                                            <span class="leo-compare-bt-content">
-                                                <i class="icon-btn-product icon          -compare material-icons"                 >&#xE915;
-                                                </i>
-                                                <span class="name-btn-product">           Add to Compare
-                                                </span>
-                                            </span>
-                                    </a>
-                                </div>
-                                <div class="button-container cart">
-                                    <form action="https://apollotran.com/demo/at_glasses_demo/en/cart" method="post">
-                                        <input type="hidden" name="token" value="c14b795a713c734520330e8dfc58fcb8">
-                                        <input type="hidden" value="900" class="quantity_product quantity_product_4" name="quantity_product">
-                                        <input type="hidden" value="1" class="minimal_quantity minimal_quantity_4" name="minimal_quantity">
-                                        <input type="hidden" value="16" class="id_product_attribute id_product_attribute_4" name="id_product_attribute">
-                                        <input type="hidden" value="4" class="id_product" name="id_product">
-                                        <input type="hidden" name="id_customization" value="" class="product_customization_id">
-                                        <input type="hidden" class="input-group form-control qty qty_product qty_product_4" name="qty" value="1" data-min="1">
-                                        <button class="btn btn-product add-to-cart leo-bt-cart leo-bt-cart_4" data-button-action="add-to-cart" type="submit">
-                                            <span class="leo-loading cssload-speeding-wheel"></span>
-                                            <span class="leo-bt-cart-content">
-                                                <i class="icon-btn-product icon          -cart material-icons shopping           -cart">&#xE547;
-                                                </i>
-                                                <span class="name-btn-product"          >Add to cart</span>
-                                            </span>
-                                        </button>
-                                    </form>
-                                </div>
-                                <div class="wishlist">
-                                    <a class="leo-wishlist-button btn-product btn-primary btn" href="javascript:void(0)" data-id-wishlist="" data-id-product="4" data-id-product-attribute="16" title="Add to Wishlist">
-                                            <span class="leo-wishlist-bt-loading     cssload-speeding-wheel">
-                                                
-                                            </span>
-                                            <span class="leo-wishlist-bt
-                                            -content">
-                                                <i class="icon-btn-product icon         -wishlist material-icons"
-                                                >&#xE87D;
-                                                </i>
-                                                <span class="name-btn-produc"               >Add to Wishlist
-                                                </span>
-                                            </span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </article>
+                    <article class="product-miniature js-product-miniature" data-id-product="4" data-id-product-attribute="16" itemscope itemtype="http://schema.org/Product">
+  <div class="thumbnail-container">
+    <div class="product-image">
+<!-- @file modules\appagebuilder\views\templates\front\products\file_tpl -->
+
+	<a href="../categories/4-16-the-adventure-begins-framed-poster.html#/19-dimension-40x60cm" class="thumbnail product-thumbnail">
+	  <img
+	    class="img-fluid"
+		src = "{{asset('/')}}/header_assets/img/37-home_default/the-adventure-begins-framed-poster.jpg"
+		alt = "Praesent maximus"
+		data-full-size-image-url = "{{asset('/')}}/header_assets/img/37-large_default/the-adventure-begins-framed-poster.jpg"
+	  >
+	  		<span class="product-additional" data-idproduct="4"></span>
+	  	</a> 
+	
+
+
+
+<!-- @file modules\appagebuilder\views\templates\front\products\file_tpl -->
+
+<ul class="product-flags">
+  	<li class="product-flag new">New</li>
+  </ul>
+
+
+<!-- @file modules\appagebuilder\views\templates\front\products\file_tpl -->
+<div class="quickview no-variants hidden-md-down">
+<a
+  href="#"
+  class="quick-view btn-product btn"
+  data-link-action="quickview"
+>
+	<span class="leo-quickview-bt-loading cssload-speeding-wheel"></span>
+	<span class="leo-quickview-bt-content">
+		<i class="icon-btn-product icon-quick-view material-icons">&#xE417;</i>
+		<span class="name-btn-product">Quick view</span>
+	</span>
+</a>
+</div>
+</div>
+    <div class="product-meta">
+<!-- @file modules\appagebuilder\views\templates\front\products\file_tpl -->
+
+  <h3 class="h3 product-title" itemprop="name"><a href="../categories/4-16-the-adventure-begins-framed-poster.html#/19-dimension-40x60cm">Praesent maximus</a></h3>
+
+
+<!-- @file modules\appagebuilder\views\templates\front\products\file_tpl -->
+
+
+<!-- @file modules\appagebuilder\views\templates\front\products\file_tpl -->
+
+      <div class="product-price-and-shipping ">
+      
+      
+      
+      <span class="sr-only">Price</span>
+      <span class="price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+        <span itemprop="priceCurrency" content="USD"></span><span itemprop="price" content="29">$29.00</span>
+      </span>
+
+      
+
+      
+    </div>
+  
+
+
+  <div class="product-description-short" itemprop="description">Printed on rigid matt finish and smooth surface.</div>
+<div class="functional-buttons clearfix">
+<!-- @file modules\appagebuilder\views\templates\front\products\file_tpl -->
+<div class="compare">
+	<a class="leo-compare-button btn-primary btn-product btn" href="javascript:void(0)" data-id-product="4" title="Add to Compare">
+		<span class="leo-compare-bt-loading cssload-speeding-wheel"></span>
+		<span class="leo-compare-bt-content">
+			<i class="icon-btn-product icon-compare material-icons">&#xE915;</i>
+			<span class="name-btn-product">Add to Compare</span>
+		</span>
+	</a>
+</div>
+
+<!-- @file modules\appagebuilder\views\templates\front\products\file_tpl -->
+<div class="button-container cart">
+	<form action="https://apollotran.com/demo/at_glasses_demo/en/cart" method="post">
+		<input type="hidden" name="token" value="c14b795a713c734520330e8dfc58fcb8">
+		<input type="hidden" value="900" class="quantity_product quantity_product_4" name="quantity_product">
+		<input type="hidden" value="1" class="minimal_quantity minimal_quantity_4" name="minimal_quantity">
+		<input type="hidden" value="16" class="id_product_attribute id_product_attribute_4" name="id_product_attribute">
+		<input type="hidden" value="4" class="id_product" name="id_product">
+		<input type="hidden" name="id_customization" value="" class="product_customization_id">
+			
+		<input type="hidden" class="input-group form-control qty qty_product qty_product_4" name="qty" value="1" data-min="1">
+		  <button class="btn btn-product add-to-cart leo-bt-cart leo-bt-cart_4" data-button-action="add-to-cart" type="submit">
+			<span class="leo-loading cssload-speeding-wheel"></span>
+			<span class="leo-bt-cart-content">
+				<i class="icon-btn-product icon-cart material-icons shopping-cart">&#xE547;</i>
+				<span class="name-btn-product">Add to cart</span>
+			</span>
+		  </button>
+	</form>
+</div>
+
+
+
+<!-- @file modules\appagebuilder\views\templates\front\products\file_tpl -->
+<div class="wishlist">
+			<a class="leo-wishlist-button btn-product btn-primary btn" href="javascript:void(0)" data-id-wishlist="" data-id-product="4" data-id-product-attribute="16" title="Add to Wishlist">
+			<span class="leo-wishlist-bt-loading cssload-speeding-wheel"></span>
+			<span class="leo-wishlist-bt-content">
+				<i class="icon-btn-product icon-wishlist material-icons">&#xE87D;</i>
+				<span class="name-btn-product">Add to Wishlist</span>
+			</span>
+		</a>
+	</div>
+</div></div>
+  </div>
+</article>
+
+                              
             </div>
-            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 col-sp-12ajax_block_product">
-                <article class="product-miniature js-product-miniature" data-id-product="6" data-id-product-attribute="0" itemscope itemtype="http://schema.org/Product">
-                    <div class="thumbnail-container">
+                      <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 col-sp-12 ajax_block_product">
+              
+                                    
+                    <article class="product-miniature js-product-miniature" data-id-product="6" data-id-product-attribute="0" itemscope itemtype="http://schema.org/Product">
+  <div class="thumbnail-container">
     <div class="product-image">
 <!-- @file modules\appagebuilder\views\templates\front\products\file_tpl -->
 
@@ -873,9 +907,9 @@
             </div>
                   </div>
       </div>
-      </div>
-      </div>
     </section>
-    
   
+
+	
+
 @endsection

@@ -17,7 +17,9 @@
   <!-- <link rel="icon" type="image/vnd.microsoft.icon" href="{{asset('/')}}/img/logostillo.png" sizes="512x512"> -->
   <link rel="shortcut icon" type="image/x-icon" href="{{asset('/')}}/img/logostillo.png" sizes="512x512">
   <link rel="stylesheet" href="{{asset('themes/csss/theme-85087a7.css')}}" type="text/css" media="all">
+  <link rel="stylesheet" type="text/css" href="{{asset('themes/csss/colorchagestyle.css')}}">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script type="text/javascript" src="{{asset('js/colorchangescript.js')}}"></script>
   <script type="text/javascript">
     var LEO_COOKIE_THEME = "AT_GLASSES_PANEL_CONFIG";
     var add_cart_error = "An error occurred while processing your request. Please try again";

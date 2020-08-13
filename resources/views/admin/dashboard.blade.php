@@ -29,14 +29,14 @@
                             <a href="javascript::void()" class="btn bg-transparent border-teal text-teal rounded-round border-2 btn-icon mr-3">
                                 <i class="icon-earth"></i>
                             </a>
-                            <div>
+                            <!-- <div>
                                 <div class="font-weight-semibold">Total Properties</div>
                                 @if(isset($total_properties) && !empty($total_properties))
                                 <span class="text-muted">{{$total_properties}}</span>
                                 @else
                                 <span class="text-muted">0</span>
                                 @endif
-                            </div>
+                            </div> -->
                         </div>
                     </div>
 
@@ -45,14 +45,14 @@
                             <a href="javascript::void()" class="btn bg-transparent border-warning-400 text-warning-400 rounded-round border-2 btn-icon mr-3">
                                 <i class="icon-notification2"></i>
                             </a>
-                            <div>
+                            <!-- <div>
                                 <div class="font-weight-semibold">Pending Properties</div>
                                 @if(isset($pending_properties) && !empty($pending_properties))
                                 <span class="text-muted">{{$pending_properties}}</span>
                                 @else
                                 <span class="text-muted">0</span>
                                 @endif
-                            </div>
+                            </div> -->
                         </div>
                     </div>
 
@@ -61,14 +61,14 @@
                             <a href="javascript::void()" class="btn bg-transparent border-indigo-400 text-indigo-400 rounded-round border-2 btn-icon mr-3">
                                 <i class="icon-checkmark"></i>
                             </a>
-                            <div>
+                            <!-- <div>
                                 <div class="font-weight-semibold">Approved Properties</div>
                                 @if(isset($approved_properties) && !empty($approved_properties))
                                 <span class="text-muted">{{$approved_properties}}</span>
                                 @else
                                 <span class="text-muted">0</span>
                                 @endif
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                     <div class="col-sm-3">

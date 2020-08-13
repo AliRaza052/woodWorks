@@ -32,20 +32,23 @@
 								</span>
 							</a>
                         </li>
+
+
 						<li class="nav-item nav-item-submenu">
 							<a href="javascript::void()" class="nav-link {{ request()->is('admin/agents') ? 'active' : '' }} {{ request()->is('admin/users') ? 'active' : '' }}"><i class="icon-users"></i> <span>Users</span></a>
 							<ul class="nav nav-group-sub" data-submenu-title="Layouts" {{ request()->is('admin/users') ? 'style=display:block;' : '' }} {{ request()->is('admin/agents') ? 'style=display:block;' : '' }}>
-								<li class="nav-item "><a href="" class="nav-link {{ request()->is('admin/users') ? 'active' : '' }}"><i class="icon-user"></i>Users</a></li>
+								<li class="nav-item "><a href="{{url('admin/user')}}" class="nav-link {{ request()->is('admin/users') ? 'active' : '' }}"><i class="icon-user"></i>Users</a></li>
 							</ul>
                         </li>
-                        <li class="nav-item">
-							<a href="{{route('products')}}" class="nav-link {{ request()->is('admin/products') ? 'active' : '' }}">
-								<i class="icon-home4"></i>
-								<span>
-									Products
-								</span>
-							</a>
+
+                        <li class="nav-item nav-item-submenu">
+							<a href="javascript::void()" class="nav-link {{ request()->is('admin/agents') ? 'active' : '' }} {{ request()->is('admin/users') ? 'active' : '' }}"><i class="icon-file-text3"></i> <span>Products</span></a>
+							<ul class="nav nav-group-sub" data-submenu-title="Layouts" {{ request()->is('admin/users') ? 'style=display:block;' : '' }} {{ request()->is('admin/agents') ? 'style=display:block;' : '' }}>
+								<li class="nav-item "><a href="{{url('admin/newproduct')}}" class="nav-link {{ request()->is('admin/users') ? 'active' : '' }}"><i class="icon-user"></i>Àdd Product</a></li>
+							</ul>
+							
                         </li>
+
 
                     	<!-- /main -->
 
