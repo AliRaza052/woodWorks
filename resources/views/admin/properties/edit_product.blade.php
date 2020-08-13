@@ -38,8 +38,8 @@
     </div>
     <div class="col-md-7 align-self-center">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="javascript:void(0)">Product</a></li>
-            <li class="breadcrumb-item active">Add Product</li>
+            <li class="breadcrumb-item"><a href="javascript:void(0)">Property</a></li>
+            <li class="breadcrumb-item active">Edit Property</li>
         </ol>
     </div>
     <div>
@@ -57,7 +57,8 @@
     @endif
         <!-- General Information -->
         <div class="add-listing-box general-info mrg-bot-25 padd-bot-30 padd-top-25">
-            <form action="{{route('save_product')}}" method="post" enctype="multipart/form-data">
+           
+            <form action="{{route('update_product',$product->id)}}" method="post" enctype="multipart/form-data">
                 {{csrf_field()}}
                 <div class="add-listing-box full-detail mrg-bot-25 padd-bot-30 padd-top-25">
                     <div class="listing-box-header">
@@ -68,34 +69,35 @@
                     <div class="row" style="margin-left:0px!important;margin-right:0px!important;">
                         <div class="col-sm-6">
                             <label>Product Name</label>
-                            <input type="text" required name="name" class="form-control">
+                            
+                            <input type="text" required name="name" value="{{$product->name}}" class="form-control">
                         </div>
                         <div class="col-sm-6">
                             <label>Price</label>
-                            <input type="text" required name="price" class="form-control">
+                            <input type="text" required name="price" value="{{$product->price}}" class="form-control">
                         </div>
                         <div class="col-sm-6">
                             <label>color</label>
-                            <input type="text" required name="color" class="form-control">
+                            <input type="text" required name="color" value="{{$product->color}}" class="form-control">
                         </div>
                         <div class="col-sm-6">
                             <label>Description</label>
-                            <textarea type="text" required name="description" class="form-control"></textarea>
+                            <textarea type="text" required name="description" class="form-control">{{$product->description}}</textarea>
                         </div>
                         <div class="col-sm-6">
                             <label>Style</label>
-                            <input type="text" required name="style" class="form-control">
+                            <input type="text" required name="style" value="{{$product->style}}" class="form-control">
                         </div>
                         <div class="col-sm-6">
                             <label>Type</label>
-                            <input type="text" required name="type" class="form-control">
+                            <input type="text" required name="type"value="{{$product->type}}" class="form-control">
                         </div>
                         <div class="col-sm-6">
                             <label>Product Images</label>
                             <div class="dropzone dz-clickable primary-dropzone">
                                 <div class="dz-default dz-message" id='TextBoxesGroup'>
-                                    <input type="file" name="image[]" class="form-control" multiple id='textbox1' required />
-                                    <input type="file" name="image[]" class="form-control" multiple id='textbox1' required />
+                                    <input type="file" name="image[]" class="form-control" multiple id='textbox1' />
+                                    <input type="file" name="image[]" class="form-control" multiple id='textbox1' />
                                     <input type="file" name="image[]" class="form-control" multiple id='textbox1' />
                                     <input type="file" name="image[]" class="form-control" multiple id='textbox1' />
                                     <input type="file" name="image[]" class="form-control" multiple id='textbox1' />
@@ -106,36 +108,34 @@
                             <label>Description Images</label>
                             <div class="dropzone dz-clickable primary-dropzone">
                                 <div class="dz-default dz-message" id='TextBoxesGroup'>
-                                    <input type="file" name="description_image[]" class="form-control" multiple id='textbox1' required />
-                                    <input type="file" name="description_image[]" class="form-control" multiple id='textbox1' required />
+                                    <input type="file" name="description_image[]" class="form-control" multiple id='textbox1' />
+                                    <input type="file" name="description_image[]" class="form-control" multiple id='textbox1' />
                                 </div>
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <label>Frame Metrial</label>
-                            <input type="text" name="frame_metrial" required class="form-control">
+                            <input type="text" name="frame_metrial" value="{{$product->frame_metrial}}" required class="form-control">
                         </div>
                         <div class="col-sm-6">
                             <label>Lens Metrial</label>
-                            <input type="text" name="lens_metrial" required class="form-control">
+                            <input type="text" name="lens_metrial" value="{{$product->lens_metrial}}" required class="form-control">
                         </div>
                         <div class="col-sm-6">
                             <label>Case Type</label>
-                            <input type="text" name="case_type" required class="form-control">
+                            <input type="text" name="case_type" value="{{$product->case_type}}" required class="form-control">
                         </div>
                         <div class="col-sm-6">
                             <label>Category</label>
-                            <input type="text" name="category" required class="form-control">
+                            <input type="text" name="category" value="{{$product->category}}" required class="form-control">
                         </div>
                         
                     </div>
                 </div>
                 <div class="d-flex justify-content-start align-items-center">
-                            <button type="submit" class="btn bg-blue ml-10">Add Product<i class="icon-paperplane ml-2"></i></button>
+                            <button type="submit" class="btn bg-blue ml-10">Update Product<i class="icon-paperplane ml-2"></i></button>
                 </div>
 </form>
-</div>
-</div>
 </div>
 @endsection
 @push('scripts')
@@ -195,52 +195,5 @@
 		});
 	});
 </script>
-<script type="text/javascript">
-	$(document).ready(function() {
-
-		var counter = 2;
-
-		$("#addButton").click(function() {
-
-			if (counter > 7) {
-				alert("Only 7 files allow");
-				return false;
-			}
-
-			var newTextBoxDiv = $(document.createElement('div'))
-				.attr("id", 'TextBoxDiv' + counter);
-
-			newTextBoxDiv.after().html('<label>Image #' + counter + ' : </label>' +
-				'<input type="file" class="form-control" name="filename[]" multiple id="textbox' + counter + '" value="" >');
-
-			newTextBoxDiv.appendTo("#TextBoxesGroup");
-
-
-			counter++;
-		});
-
-		$("#removeButton").click(function() {
-			if (counter == 1) {
-				alert("No more files to remove");
-				return false;
-			}
-
-			counter--;
-
-			$("#TextBoxDiv" + counter).remove();
-
-		});
-
-		$("#getButtonValue").click(function() {
-
-			var msg = '';
-			for (i = 1; i < counter; i++) {
-				msg += "\n Textbox #" + i + " : " + $('#textbox' + i).val();
-			}
-			alert(msg);
-		});
-	});
-</script>
-
 
 @endpush

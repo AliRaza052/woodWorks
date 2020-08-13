@@ -9,14 +9,19 @@ use Image;
 
 class ProductsController extends Controller
 {
+  public function productListing()
+  {
+    $products = Products::all();
+    return view('admin.properties.products_listing',compact('products'));
+  }
     public function newproduct()
     {
         return view('admin.properties.addproduct');
 
     }
-    public function editPropety($id){
+    public function editProduct($id){
         $product = Products::where('id',$id)->get()->first();
-        return view('admin.properties.edit_property',compact('product'));
+        return view('admin.properties.edit_product',compact('product'));
     }
 
      public function addproperty(Request $request)
@@ -37,40 +42,24 @@ class ProductsController extends Controller
       $product->price=$request->price;
       $images = $request->image;
       $description_images =  $request->description_image;
-      if(!empty($images)){
-            if($request->hasfile('image'))
-            {
-                foreach($request->file('image') as $image)
-                {
-                    $destinationPath =public_path().'/assets/product/images/product_images/';
-                    if (!file_exists($destinationPath)) {
-                    mkdir($destinationPath, 0777, true);
-                    }
-                    $filename= time().$image->getClientOriginalName();
-                    $image->move($destinationPath, $filename);
-                  
-                    $images_data[] = $filename;
-                }
-                $product->image=json_encode($images_data);
-            }
+      if($files=$request->file('image')){
+        $destinationPath =public_path().'/assets/product/images/product_images/';
+        foreach($files as $file){
+            $name=$file->getClientOriginalName();
+            $file->move($destinationPath,$name);
+            $images[]=$name;
         }
-        if(!empty($description_images)){
-            if($request->hasfile('description_image'))
-            {
-                foreach($request->file('description_image') as $description_image)
-                {
-                    $destinationPath =public_path().'/assets/product/images/description_images/';
-                    if (!file_exists($destinationPath)) {
-                    mkdir($destinationPath, 0777, true);
-                    }
-                    $desc_filename= time().$image->getClientOriginalName();
-                    $image->move($destinationPath, $desc_filename);
-                  
-                    $des_images_data[] = $desc_filename;
-                }
-                $product->description_image=json_encode($des_images_data);
-            }
+        $product->image=json_encode($images);
+    }
+         if($files=$request->file('description_image')){
+        $destinationPath =public_path().'/assets/product/images/description_images/';
+        foreach($files as $file){
+            $desc_name=$file->getClientOriginalName();
+            $file->move($destinationPath,$desc_name);
+            $product_images[]=$desc_name;
         }
+        $product->description_image=json_encode($product_images);
+    }
      if($product->save()){
         return redirect()->back()->with('success','product Updated Successfully');
      }else{
@@ -81,7 +70,7 @@ class ProductsController extends Controller
     public function updateproduct(Request $request, $id)
     {
       $product= Products::find($id);
-      $product->user_id=Auth::user()->id;
+      // $product->user_id=Auth::user()->id;
     // $product->user_id='2';
       $product->name=$request->name;
       $product->color=$request->color;
@@ -95,60 +84,41 @@ class ProductsController extends Controller
       $product->price=$request->price;
       $images = $request->image;
       $description_images =  $request->description_image;
-      if(!empty($images)){
-            if($request->hasfile('image'))
-            {
-                foreach($request->file('image') as $image)
-                {
-                    $destinationPath =public_path().'/assets/product/media/images/';
-                    if (!file_exists($destinationPath)) {
-                    mkdir($destinationPath, 0777, true);
-                    }
-                    $filename= time().$image->getClientOriginalName();
-                    $image->move($destinationPath, $filename);
-                    $img = Image::make($destinationPath.$filename);
-                   
-                    $img->resize(615,615);
-                    if (!file_exists($destinationPath.'thumb/')) {
-                        mkdir($destinationPath.'thumb/', 0777, true);
-                    }
-                    //   $thumbimage=$destinationPath.'thumb/'.$filename;
-                    $img->save($destinationPath.'/thumb/'.$filename);
-
-                    $images_data[] = $filename;
-                }
-                $product->image=json_encode($images_data);
-            }
+      if($files=$request->file('image')){
+        $destinationPath =public_path().'/assets/product/images/product_images/';
+        foreach($files as $file){
+            $name=$file->getClientOriginalName();
+            $file->move($destinationPath,$name);
+            $images[]=$name;
         }
-        if(!empty($description_images)){
-            if($request->hasfile('description_image'))
-            {
-                foreach($request->file('description_image') as $description_image)
-                {
-                    $destinationPath =public_path().'/assets/product/media/images/description_images/';
-                    if (!file_exists($destinationPath)) {
-                    mkdir($destinationPath, 0777, true);
-                    }
-                    $desc_filename= time().$image->getClientOriginalName();
-                    $image->move($destinationPath, $desc_filename);
-                    $img = Image::make($destinationPath.$desc_filename);
-
-                    $img->resize(615,615);
-                    if (!file_exists($destinationPath.'thumb/')) {
-                        mkdir($destinationPath.'thumb/', 0777, true);
-                    }
-                    //   $thumbimage=$destinationPath.'thumb/'.$filename;
-                    $img->save($destinationPath.'/thumb/'.$desc_filename);
-
-                    $des_images_data[] = $desc_filename;
-                }
-                $product->description_image=json_encode($des_images_data);
-            }
+        $product->image=json_encode($images);
+    }
+         if($files=$request->file('description_image')){
+        $destinationPath =public_path().'/assets/product/images/description_images/';
+        foreach($files as $file){
+            $desc_name=$file->getClientOriginalName();
+            $file->move($destinationPath,$desc_name);
+            $product_images[]=$desc_name;
         }
+        $product->description_image=json_encode($product_images);
+    }
      if($product->save()){
         return redirect()->back()->with('success','product Updated Successfully');
      }else{
         return redirect()->back()->with('error','Error in Updating product');
      }
+    }
+
+    public function deleteProduct($id)
+    {
+      $product = Products::findorFail($id);
+      if ($product) {
+        $product->delete();
+        return redirect()->back()->with('deleted','Product Deleted Successfully');
+      }
+      else
+      {
+        return redirect()->back()->with('deleted','Failure in Product Deletion');
+      }
     }
 }

@@ -39,7 +39,11 @@ Route::post('admin/updateuser/{id}','AdminController@updateUser');
 Route::get('admin/deleteuser/{id}','AdminController@deleteuser');
 Route::get('admin/user','AdminController@users')->name('list_users');
 
+
+Route::get('admin/product_listings','ProductsController@productListing')->name('product_listings');
 Route::get('admin/newproduct','ProductsController@newproduct')->name('newproduct');
-Route::get('admin/editproperty/{id}','ProductsController@editPropety')->name('edit_property');
-Route::post('admin/updateproperty/{id}','ProductsController@updateProperty')->name('updateproperty');
 Route::post('admin/postproduct','ProductsController@addproperty')->name('save_product');
+Route::get('admin/edit_product/{id}','ProductsController@editProduct')->name('edit_product');
+Route::post('admin/update_product/{id}','ProductsController@updateproduct')->name('update_product');
+Route::get('admin/delete_product/{id}','ProductsController@deleteProduct')->name('delete_product');
+
