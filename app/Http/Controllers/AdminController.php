@@ -208,43 +208,13 @@ class AdminController extends Controller
 
         public function deleteuser($id){
             $del=User::find($id);
-            if($del->delete())
-        {
-            $log = new AdminLog();
-            $log->user_id = Auth::user()->id;
-            $log->user_name = Auth::user()->name;
-            $log->task_performed = "Deleted user $del->name Profile";
-            $log->save();
-        }
+            $del->delete();
+            
+            
             return redirect()->back()->with('delete_user','User Has been removed by admin');
-        }
+       }
 
-        public function agents(){
-            $users=User::select('users.id','users.name','users.email','users.phone','users.country','agencies.agency_name','agencies.agency_city','agencies.agency_phone','agency_email')
-            ->join('agencies','users.id','=','agencies.user_id')
-            ->where('users.type','=','agency')
-            ->get();
-            return view('admin.agents.agents',compact('users'));
-        }
-
-        public function deleteagent($id){
-            $del=User::find($id);
-            $agencydelete=Agency::where('user_id','=',$del->id)->first();
-             if($agencydelete->delete())
-        {
-            $log = new AdminLog();
-            $log->user_id = Auth::user()->id;
-            $log->user_name = Auth::user()->name;
-            $log->task_performed = "Deleted Agent $agencydelete->agency_name Profile";
-            $log->save();
-        }
-            return redirect()->back()->with('delete_user','User Has been removed by admin');
-        }
-        public function adminLogs()
-        {
-            $logs = AdminLog::orderBy('id','DESC')->get();
-            return view('admin.logs',compact('logs'));
-        }
+        
 
         public function logout(){
             if(Auth::check()){
