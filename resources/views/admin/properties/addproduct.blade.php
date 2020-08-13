@@ -62,7 +62,7 @@
                 <h3>General Information</h3>
                 <p>Write something general information about your Product</p>
             </div>
-            <form action="{{url('/postproperty')}}" method="post" enctype="multipart/form-data">
+            <form action="{{route('save_product')}}" method="post" enctype="multipart/form-data">
                 {{csrf_field()}}
                 <div class="add-listing-box full-detail mrg-bot-25 padd-bot-30 padd-top-25">
                     <div class="listing-box-header">

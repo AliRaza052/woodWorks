@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use \App\Products;
 use Auth;
+use Image;
 
 class ProductsController extends Controller
 {
@@ -41,21 +42,13 @@ class ProductsController extends Controller
             {
                 foreach($request->file('image') as $image)
                 {
-                    $destinationPath =public_path().'/assets/product/media/images/';
+                    $destinationPath =public_path().'/assets/product/images/product_images/';
                     if (!file_exists($destinationPath)) {
                     mkdir($destinationPath, 0777, true);
                     }
                     $filename= time().$image->getClientOriginalName();
                     $image->move($destinationPath, $filename);
-                    $img = Image::make($destinationPath.$filename);
-                   
-                    $img->resize(615,615);
-                    if (!file_exists($destinationPath.'thumb/')) {
-                        mkdir($destinationPath.'thumb/', 0777, true);
-                    }
-                    //   $thumbimage=$destinationPath.'thumb/'.$filename;
-                    $img->save($destinationPath.'/thumb/'.$filename);
-
+                  
                     $images_data[] = $filename;
                 }
                 $product->image=json_encode($images_data);
@@ -66,21 +59,13 @@ class ProductsController extends Controller
             {
                 foreach($request->file('description_image') as $description_image)
                 {
-                    $destinationPath =public_path().'/assets/product/media/images/description_images/';
+                    $destinationPath =public_path().'/assets/product/images/description_images/';
                     if (!file_exists($destinationPath)) {
                     mkdir($destinationPath, 0777, true);
                     }
                     $desc_filename= time().$image->getClientOriginalName();
                     $image->move($destinationPath, $desc_filename);
-                    $img = Image::make($destinationPath.$desc_filename);
-
-                    $img->resize(615,615);
-                    if (!file_exists($destinationPath.'thumb/')) {
-                        mkdir($destinationPath.'thumb/', 0777, true);
-                    }
-                    //   $thumbimage=$destinationPath.'thumb/'.$filename;
-                    $img->save($destinationPath.'/thumb/'.$desc_filename);
-
+                  
                     $des_images_data[] = $desc_filename;
                 }
                 $product->description_image=json_encode($des_images_data);

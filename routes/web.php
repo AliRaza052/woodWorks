@@ -1,3 +1,4 @@
+
 <?php
 
 use Illuminate\Support\Facades\Route;
@@ -41,6 +42,4 @@ Route::get('admin/user','AdminController@users')->name('list_users');
 Route::get('admin/newproduct','ProductsController@newproduct')->name('newproduct');
 Route::get('admin/editproperty/{id}','ProductsController@editPropety')->name('edit_property');
 Route::post('admin/updateproperty/{id}','ProductsController@updateProperty')->name('updateproperty');
-Route::get('admin/addproduct','ProductsController@addproperty')->name('addproperty');
-Route::get('admin/properties','ProductsController@addproperty');
-Route::post('admin/postproperty','ProductsController@postproperty');
+Route::post('admin/postproduct','ProductsController@addproperty')->name('save_product');
