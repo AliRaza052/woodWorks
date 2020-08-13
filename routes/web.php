@@ -31,4 +31,16 @@ Route::get('/sunglasses','SunGlassesController@sunglasses');
 Route::get('admin','AdminController@index')->name('admin_login');
 Route::post('admin/login','AdminController@adminlogin');
 Route::get('admin/dashboard','AdminController@dashboard');
-Route::get('admin/products', 'ProductController@productsListing')->name('products');
+Route::get('admin/adduser','AdminController@addUser');
+Route::post('admin/addnewuser','AdminController@addNewUser');
+Route::get('admin/edituser/{id}','AdminController@editUser');
+Route::post('admin/updateuser/{id}','AdminController@updateUser');
+Route::get('admin/deleteuser/{id}','AdminController@deleteuser');
+Route::get('admin/user','AdminController@users')->name('list_users');
+
+Route::get('admin/newproduct','ProductsController@newproduct')->name('newproduct');
+Route::get('admin/editproperty/{id}','ProductsController@editPropety')->name('edit_property');
+Route::post('admin/updateproperty/{id}','ProductsController@updateProperty')->name('updateproperty');
+Route::get('admin/addproduct','ProductsController@addproperty')->name('addproperty');
+Route::get('admin/properties','ProductsController@addproperty');
+Route::post('admin/postproperty','ProductsController@postproperty');
