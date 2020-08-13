@@ -50,4 +50,5 @@ Route::get('admin/delete_product/{id}','ProductsController@deleteProduct')->name
 Route::get('admin/category','CategoryController@category');
 Route::get('admin/addcategory','CategoryController@addcategory')->name('addcategory');
 Route::post('admin/postcategory','CategoryController@addproductcategory')->name('postcategory');
-
+Route::get('admin/editproductcategory/{id}','CategoryController@editproductcategory')->name('editproductcategory');
+Route::post('admin/updateproductcategory/{id}','CategoryController@updateproduct')->name('updateproductcategory');

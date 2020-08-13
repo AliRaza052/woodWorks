@@ -38,17 +38,17 @@
                                             <th>#</th>
                                             <th>Name</th>
                                             <th>Description</th>
-                                            <th>Image</th>
+                                            
                                             
                                             <th>Action</th>
                                         </tr>
                                         </thead>
                                         <tfoot>
                                             <tr>
-                                            th>#</th>
+                                            <th>#</th>
                                             <th>Name</th>
                                             <th>Description</th>
-                                            <th>Image</th>
+                                            
                                             <th>Action</th>
                                             </tr>
                                         </tfoot>
@@ -61,13 +61,12 @@
                                             <tr>
                                             <td>{{$count++}}</td>
                                                 <td>{{$category->name}}</td>
-                                                <td>{{$category->color}}</td>
-                                                <td>{{$category->type}}</td>
-                                                <td>{{$category->category}}</td>
-                                                <td>${{$category->price}}</td>
+                                                <td>{{$category->description}}</td>
+                                                
+                                                
                                                 <td>
                                                     <li class="category-inline-item">
-                                                    <a href="{{route('edit_product',$category->id)}}" class="btn btn-primary btn-sm rounded-0" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-edit"></i></a>
+                                                    <a href="{{route('editproductcategory',$category->id)}}" class="btn btn-primary btn-sm rounded-0" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-edit"></i></a>
                                                     </li>
                                                     <li class="category-inline-item">
                                                     <a href="{{url('/admin/delete_product',$category->id)}}" class="btn btn-danger btn-sm rounded-0"  onclick="return confirm('Are You Sure to delete this property?')" data-toggle="tooltip" data-placement="top" title="Add"><i class="fa fa-trash"></i></a>
