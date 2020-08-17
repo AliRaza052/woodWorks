@@ -68,3 +68,11 @@ Route::post('admin/postlense','LensesController@postLense')->name('postlense');
 Route::get('admin/editlense/{id}','LensesController@editlens')->name('editlense');
 Route::post('admin/updatelense/{id}','LensesController@updateLense')->name('updatelense');
 Route::get('admin/deletelense/{id}','LensesController@deleteLense')->name('deletelense');
+
+
+Route::get('admin/lensesmetrial','LensMetrialController@index');
+Route::get('admin/addlensemetrial','LensMetrialController@addLense')->name('addlensemetrial');
+Route::post('admin/postlensemetrial','LensMetrialController@postlense')->name('postlensemetrial');
+Route::get('admin/editlense/{id}','LensMetrialController@editlens')->name('editlense');
+Route::post('admin/updatelensemetrial/{id}','LensMetrialController@updateLense')->name('updatelensemetrial');
+Route::get('admin/deletelense/{id}','LensMetrialController@deleteLense')->name('deletelense');

@@ -83,6 +83,15 @@
 							</a>
                         </li>
 
+                        <li class="nav-item">
+							<a href="{{url('admin/lensesmetrial')}}" class="nav-link {{ request()->is('admin/lensesmetrial') ? 'active' : '' }}">
+								<i class="icon-file-text3"></i>
+								<span>
+									 Lens Metrial
+								</span>
+							</a>
+                        </li>
+
 
                     	<!-- /main -->
 
