@@ -27,7 +27,7 @@
                         <div class="card">
                             <div class="card-body">
 
-                                <a href="{{url('admin/addslider')}}" class="btn btn-success btn-sm rounded-0" data-toggle="tooltip" data-placement="top" title="Add"><i class="fa fa-plus"></i> Add Product Types</a>
+                                <a href="{{url('admin/addslider')}}" class="btn btn-success btn-sm rounded-0" data-toggle="tooltip" data-placement="top" title="Add"><i class="fa fa-plus"></i> Add Slider</a>
 
                         <h4 class="card-title">Data</h4>
 
@@ -49,16 +49,17 @@
                                             <th>#</th>
                                             <th>Name</th>
                                             <th>Description</th>
+                                            <th>Product Id</th>
 
                                             <th>Action</th>
                                             </tr>
                                         </tfoot>
                                         <tbody>
-                                        @isset($types)
+                                        @isset($sliders)
                                         @php
                                         $count=1;
 @endphp
-                                        @foreach($types as $type)
+                                        @foreach($sliders as $type)
 
                                             <tr>
                                             <td>{{$count++}}</td>

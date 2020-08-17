@@ -84,3 +84,11 @@ Route::post('admin/postprescription','PrescriptionTypeController@postLense')->na
 Route::get('admin/editlense/{id}','PrescriptionTypeController@editlens')->name('editlense');
 Route::post('admin/updateprescription/{id}','PrescriptionTypeController@updateLense')->name('updateprescription');
 Route::get('admin/deletelense/{id}','PrescriptionTypeController@deleteLense')->name('deletelense');
+
+
+Route::get('admin/slider','SliderController@index');
+Route::get('admin/addslider','SliderController@addSlider')->name('addslider');
+Route::post('admin/postslider','SliderController@addslidertype')->name('postslider');
+Route::get('admin/editproducttype/{id}','SliderController@editsliderType')->name('editproducttype');
+Route::post('admin/updateslider/{id}','SliderController@updatesliderType')->name('updateslider');
+Route::get('admin/deletetype/{id}','SliderController@deleteslider')->name('deletetype');

@@ -101,6 +101,15 @@
 							</a>
                         </li>
 
+                        <li class="nav-item">
+							<a href="{{url('admin/slider')}}" class="nav-link {{ request()->is('admin/slider') ? 'active' : '' }}">
+								<i class="icon-file-text3"></i>
+								<span>
+									 Slider
+								</span>
+							</a>
+                        </li>
+
 
                     	<!-- /main -->
 
