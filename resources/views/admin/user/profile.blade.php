@@ -12,17 +12,6 @@
             <!-- Navigation -->
             <div class="card">
                 <div class="card-body bg-indigo-400 text-center card-img-top" style="background-image: url(http://demo.interface.club/limitless/assets/images/bg.png); background-size: contain;">
-                    <div class="card-img-actions d-inline-block mb-3">
-                        <img class="img-fluid rounded-circle" src="{{url('/')}}/assets/user/images/{{(new \App\User)->getImage($user->id)}}" width="170" height="170" style="height:170px">
-                        {{-- <div class="card-img-actions-overlay rounded-circle">
-                            <a href="#" class="btn btn-outline bg-white text-white border-white border-2 btn-icon rounded-round">
-                                <i class="icon-plus3"></i>
-                            </a>
-                            <a href="user_pages_profile.html" class="btn btn-outline bg-white text-white border-white border-2 btn-icon rounded-round ml-2">
-                                <i class="icon-link"></i>
-                            </a>
-                        </div> --}}
-                    </div>
 
                 <h6 class="font-weight-semibold mb-0">{{$user->name}}</h6>
                     {{-- <span class="d-block opacity-75">Head of UX</span> --}}
@@ -40,14 +29,6 @@
                             <a href="#profile" class="nav-link active" data-toggle="tab">
                                 <i class="icon-user"></i>
                                  My profile
-                            </a>
-                        </li>
-                        <li class="nav-item-divider"></li>
-                        <li class="nav-item">
-                            <a href="#orders" class="nav-link" data-toggle="tab">
-                                <i class="icon-cart2"></i>
-                                Ads
-                            <span class="badge bg-success badge-pill ml-auto">{{$total_ads}}</span>
                             </a>
                         </li>
                     </ul>
@@ -94,58 +75,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <label>Country</label>
-                                    <select class="form-control" name="country">
-                                        <option>Select Country</option>
-                                        <option value="Pakistan" @if($user->country == "Pakistan") selected @endif>Pakistan</option>
-                                    </select>
-                                    @if ($errors->has('country'))
-                                    <span class="help-block">
-                                        <small style="color:red;">{{ $errors->first('country') }}</small>
-                                    </span>
-                                    @endif
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>City</label>
-                                        <select class="form-control" name="city">
-                                            <option>Select City</option>
-                                            <option value="lahore" @if($user->city == "lahore") selected @endif>Lahore</option>
-                                            <option value="islamabad" @if($user->city == "islamabad") selected @endif>Islamabad</option>
-                                            <option value="sargodha" @if($user->city == "sargodha") selected @endif>Sargodha</option>
-                                            <option value="faisalabad" @if($user->city == "faisalabad") selected @endif>Faisalabad</option>
-                                            <option value="peshawar" @if($user->city == "peshawar") selected @endif>Peshawar</option>
-                                            <option value="jahuarabad" @if($user->city == "jahuarabad") selected @endif>Jahuarabad</option>
-                                            <option value="mianwali" @if($user->city == "mianwali") selected @endif>Mianwali</option>
-                                            <option value="okara" @if($user->city == "okara") selected @endif>Okara</option>
-                                        </select>
-                                        @if ($errors->has('city'))
-                                <span class="help-block">
-                                    <small style="color:red;">{{ $errors->first('city') }}</small>
-                                </span>
-                                @endif
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <label>Phone #</label>
-                                <input type="text" value="{{$user->phone}}" class="form-control">
-                                    <span class="form-text text-muted">03001234567</span>
-                                </div>
-                                <div class="col-md-6">
-                                    <label>Upload profile image</label>
-                                    <input type="file" name="image" class="form-input-styled" data-fouc>
-                                    <span class="form-text text-muted">Accepted formats: png, jpg, jpeg. Max file size 2Mb</span>
-                                </div>
-                            </div>
-                        </div>
+                        
                         <div class="form-group">
                             <div class="row">
                                 <div class="col-md-6">

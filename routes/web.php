@@ -29,8 +29,12 @@ Route::get('/sunglasses','SunGlassesController@sunglasses');
 
 
 // Admin Routes
-Route::get('admin','AdminController@index')->name('admin_login');
-Route::post('admin/login','AdminController@adminlogin');
+Route::get('admin/login','AdminController@index')->name('admin_login');
+Route::post('admin/postlogin','AdminController@adminlogin');
+Route::get('admin/profile/{id}','AdminController@userProfile')->name('profile');
+Route::get('admin/edit_admin/{id}','AdminController@editAdmin')->name('edit_admin');
+Route::post('admin/update_admin/{id}','AdminController@updateAdmin')->name('update_admin');
+Route::get('admin/logout','AdminController@logout')->name('logout');
 Route::get('admin/dashboard','AdminController@dashboard');
 Route::get('admin/adduser','AdminController@addUser');
 Route::post('admin/addnewuser','AdminController@addNewUser');

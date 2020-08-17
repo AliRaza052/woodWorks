@@ -27,9 +27,7 @@ class AdminController extends Controller
     public function userProfile($id)
     {
         $user = User::where('id',$id)->get()->first();
-        $ads = Property::where('user_id',$id)->get();
-        $total_ads = $ads->count();
-        return view('admin.user.profile',compact('user','ads','total_ads'));
+        return view('admin.user.profile',compact('user'));
     }
     public function addNewUser(Request $request){
         {
@@ -211,6 +209,7 @@ class AdminController extends Controller
             $del->delete();
             
             
+
             return redirect()->back()->with('delete_user','User Has been removed by admin');
        }
 

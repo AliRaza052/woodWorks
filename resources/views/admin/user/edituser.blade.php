@@ -72,9 +72,9 @@
                                             <label>User Type:</label>
                                             <select class="form-control" name="type">
                                                 <option>Select Type</option>
-                                                <option value="super_admin">Super Admin</option>
-                                                <option value="admin">Admin</option>
-                                                <option value="user">User</option>
+                                                <option value="super_admin" @if($user->type == "super_admin") selected @endif>Super Admin</option>
+                                                <option value="admin" @if($user->type == "admin") selected @endif>Admin</option>
+                                                <option value="user" @if($user->type == "user") selected @endif>User</option>
                                             </select>
                                             @if ($errors->has('type'))
                                     <span class="help-block">
@@ -84,7 +84,7 @@
                                         </div>
                                     </div>
                                 </div>
-                              
+
 									<div class="d-flex justify-content-start align-items-center">
 										<button type="submit" class="btn bg-blue ml-3">Update User<i class="icon-paperplane ml-2"></i></button>
 									</div>
