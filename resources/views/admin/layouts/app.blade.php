@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" type="image/png" sizes="50x50" href="{{asset('frontend/img/rig.png')}}">
-    <title>Jgaah.com || Har Jgaah Hum Hein</title>
+    <title>Stillo.store || Admin Dashboard</title>
     <!-- Global stylesheets -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
     <link href="{{asset('admin/assets/css/bootstrap.css')}}" rel="stylesheet" type="text/css">
@@ -90,7 +90,7 @@
                 </div>
                 <div class="navbar-collapse collapse" id="navbar-footer">
                     <span class="navbar-text">
-                        &copy; 2020 Admin Dashboard of stillo.store by <a href="http://tescoit.com/" target="_blank">Tesco IT Solutions </a>
+                        &copy; 2020 Admin Dashboard of stillo.store by <a href="http://tascoit.com/" target="_blank">Tesco IT Solutions </a>
                     </span>
                 </div>
             </div>
