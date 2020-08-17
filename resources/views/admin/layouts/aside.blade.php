@@ -92,6 +92,15 @@
 							</a>
                         </li>
 
+                        <li class="nav-item">
+							<a href="{{url('admin/prescription')}}" class="nav-link {{ request()->is('admin/prescription') ? 'active' : '' }}">
+								<i class="icon-file-text3"></i>
+								<span>
+									 Prescription Type
+								</span>
+							</a>
+                        </li>
+
 
                     	<!-- /main -->
 

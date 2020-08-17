@@ -72,7 +72,14 @@ Route::get('admin/deletelense/{id}','LensesController@deleteLense')->name('delet
 
 Route::get('admin/lensesmetrial','LensMetrialController@index');
 Route::get('admin/addlensemetrial','LensMetrialController@addLense')->name('addlensemetrial');
-Route::post('admin/postlensemetrial','LensMetrialController@postlense')->name('postlensemetrial');
+Route::post('admin/postlensemetrial','LensMetrialController@postLense')->name('postlensemetrial');
 Route::get('admin/editlense/{id}','LensMetrialController@editlens')->name('editlense');
 Route::post('admin/updatelensemetrial/{id}','LensMetrialController@updateLense')->name('updatelensemetrial');
 Route::get('admin/deletelense/{id}','LensMetrialController@deleteLense')->name('deletelense');
+
+Route::get('admin/prescription','PrescriptionTypeController@index');
+Route::get('admin/addprescription','PrescriptionTypeController@addLense')->name('addprescription');
+Route::post('admin/postprescription','PrescriptionTypeController@postLense')->name('postprescription');
+Route::get('admin/editlense/{id}','PrescriptionTypeController@editlens')->name('editlense');
+Route::post('admin/updateprescription/{id}','PrescriptionTypeController@updateLense')->name('updateprescription');
+Route::get('admin/deletelense/{id}','PrescriptionTypeController@deleteLense')->name('deletelense');
