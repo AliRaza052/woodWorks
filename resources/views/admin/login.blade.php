@@ -5,8 +5,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="icon" type="image/png" sizes="50x50" href="{{asset('frontend/img/rig.png')}}">
-    <title>Jgaah.com || Admin Login </title>
+    {{-- <link rel="icon" type="image/png" sizes="50x50" href="{{asset('frontend/img/rig.png')}}"> --}}
+    <title>Stillo.store || Admin Login </title>
 
     <!-- Global stylesheets -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
@@ -36,7 +36,7 @@
 <body>
 
     <!-- Page content -->
-    <div class="page-content" style="background:asset('{{asset('frontend/img/BG.jpg')}}') no-repeat;background-size: cover;">
+    <div class="page-content" style="background:asset('{{asset('img/BG.jpg')}}') no-repeat;background-size: cover;">
 
         <!-- Main content -->
         <div class="content-wrapper">
@@ -49,7 +49,7 @@
                 </div>
                 @endif
                 <!-- Login form -->
-                <form class="login-form wmin-sm-400" action="{{asset('/admin/adminlogin')}}" method="post">
+                <form class="login-form wmin-sm-400" action="{{url('/admin/postlogin')}}" method="post">
                     {{csrf_field()}}
                     <div class="card mb-0">
                         <ul class="nav nav-tabs nav-justified alpha-grey mb-0">

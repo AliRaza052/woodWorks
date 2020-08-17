@@ -19,16 +19,17 @@
         <!-- Traffic sources -->
         <div class="card">
             <div class="card-header header-elements-inline">
-                <h6 class="card-title">Traffic sources</h6>
+                {{-- <h6 class="card-title">Traffic sources</h6> --}}
             </div>
 
             <div class="card-body py-0">
                 <div class="row">
-                    <div class="col-sm-3">
+                    <div class="col-sm-5">
                         <div class="d-flex align-items-center justify-content-center mb-2" style="margin-right:10px">
                             <a href="javascript::void()" class="btn bg-transparent border-teal text-teal rounded-round border-2 btn-icon mr-3">
                                 <i class="icon-earth"></i>
                             </a>
+<<<<<<< HEAD
                             <!-- <div>
                                 <div class="font-weight-semibold">Total Properties</div>
                                 @if(isset($total_properties) && !empty($total_properties))
@@ -49,6 +50,12 @@
                                 <div class="font-weight-semibold">Pending Properties</div>
                                 @if(isset($pending_properties) && !empty($pending_properties))
                                 <span class="text-muted">{{$pending_properties}}</span>
+=======
+                             <div>
+                                <div class="font-weight-semibold">Total Products</div>
+                                @if(isset($total_products) && !empty($total_products))
+                                <span class="text-muted">{{$total_products}}</span>
+>>>>>>> master
                                 @else
                                 <span class="text-muted">0</span>
                                 @endif
@@ -56,6 +63,7 @@
                         </div>
                     </div>
 
+<<<<<<< HEAD
                     <div class="col-sm-3">
                         <div class="d-flex align-items-center justify-content-center mb-2" style="margin-left:20px">
                             <a href="javascript::void()" class="btn bg-transparent border-indigo-400 text-indigo-400 rounded-round border-2 btn-icon mr-3">
@@ -72,6 +80,9 @@
                         </div>
                     </div>
                     <div class="col-sm-3">
+=======
+                    <div class="col-sm-5">
+>>>>>>> master
                         <div class="d-flex align-items-center justify-content-center mb-2" style="margin-right:30px">
                             <a href="javascript::void()" class="btn bg-transparent border-indigo-400 text-indigo-400 rounded-round border-2 btn-icon mr-3">
                                 <i class="icon-people"></i>

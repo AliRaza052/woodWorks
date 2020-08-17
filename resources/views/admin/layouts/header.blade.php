@@ -27,14 +27,17 @@
 
 				<ul class="navbar-nav">
 					<li class="nav-item dropdown dropdown-user">
-						<a href="#" class="navbar-nav-link d-flex align-items-center dropdown-toggle" data-toggle="dropdown">
+                        <a href="#" class="navbar-nav-link d-flex align-items-center dropdown-toggle" data-toggle="dropdown">
+                            @if(Auth::user()->type == 'admin' || Auth::user()->type == 'super_admin')
 
+                        <span>{{Auth::user()->name}}</span>
+                            @endif
 						</a>
 
 						<div class="dropdown-menu dropdown-menu-right">
 
-							<a href="" class="dropdown-item"><i class="icon-cog5"></i> Update Profile</a>
-							<a href="" class="dropdown-item"><i class="icon-switch2"></i> Logout</a>
+                        <a href="{{route('edit_admin',Auth::user()->id)}}" class="dropdown-item"><i class="icon-cog5"></i> Update Profile</a>
+                        <a href="{{route('logout')}}" class="dropdown-item"><i class="icon-switch2"></i> Logout</a>
 						</div>
 					</li>
 				</ul>
