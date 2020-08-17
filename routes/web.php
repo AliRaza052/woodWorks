@@ -70,6 +70,7 @@ Route::post('admin/updatelense/{id}','LensesController@updateLense')->name('upda
 Route::get('admin/deletelense/{id}','LensesController@deleteLense')->name('deletelense');
 
 
+
 Route::get('admin/lensesmetrial','LensMetrialController@index');
 Route::get('admin/addlensemetrial','LensMetrialController@addLense')->name('addlensemetrial');
 Route::post('admin/postlensemetrial','LensMetrialController@postLense')->name('postlensemetrial');
