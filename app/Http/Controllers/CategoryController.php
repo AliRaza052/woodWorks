@@ -70,4 +70,10 @@ class CategoryController extends Controller
         return redirect()->back()->with('error','Error in Updating product');
      }
     }
+    public function deleteCategory($id)
+    {
+      $category = Category::where('id',$id)->get()->first();
+      $category->delete();
+      return redirect()->back()->with('delete_category','Category deleteed Successfully');
+    }
 }

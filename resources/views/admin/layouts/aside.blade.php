@@ -33,12 +33,14 @@
 							</a>
                         </li>
 
-
-						<li class="nav-item nav-item-submenu">
-							<a href="javascript::void()" class="nav-link {{ request()->is('admin/agents') ? 'active' : '' }} {{ request()->is('admin/users') ? 'active' : '' }}"><i class="icon-users"></i> <span>Users</span></a>
-							<ul class="nav nav-group-sub" data-submenu-title="Layouts" {{ request()->is('admin/users') ? 'style=display:block;' : '' }} {{ request()->is('admin/agents') ? 'style=display:block;' : '' }}>
-								<li class="nav-item "><a href="{{url('admin/user')}}" class="nav-link {{ request()->is('admin/users') ? 'active' : '' }}"><i class="icon-user"></i>Users</a></li>
-							</ul>
+                        <li class="nav-item">
+							<a href="{{url('admin/user')}}" class="nav-link {{ request()->is('admin/user') ? 'active' : '' }}">
+								<i class="icon-users"></i>
+								<span>
+									Users
+									{{-- <span class="d-block font-weight-normal opacity-50">No active orders</span> --}}
+								</span>
+							</a>
                         </li>
 
                         <li class="nav-item">
@@ -60,12 +62,23 @@
 							</a>
                         </li>
 
+                        
+
                         <li class="nav-item">
 							<a href="{{url('admin/category')}}" class="nav-link {{ request()->is('admin/category') ? 'active' : '' }}">
 								<i class="icon-file-text3"></i>
 								<span>
-									Category
+									Product Category
 									{{-- <span class="d-block font-weight-normal opacity-50">No active orders</span> --}}
+								</span>
+							</a>
+                        </li>
+
+                        <li class="nav-item">
+							<a href="{{url('admin/lenses')}}" class="nav-link {{ request()->is('admin/lenses') ? 'active' : '' }}">
+								<i class="icon-file-text3"></i>
+								<span>
+									 Lenses
 								</span>
 							</a>
                         </li>

@@ -26,6 +26,11 @@
                          
                         <div class="card">
                             <div class="card-body">
+                                @if(session('delete_category'))
+                                <div class="alert alert-danger">
+                                    {{session('delete_category')}}
+                                </div>
+                                @endif
                                  
                                 <a href="{{url('admin/addcategory')}}" class="btn btn-success btn-sm rounded-0" data-toggle="tooltip" data-placement="top" title="Add"><i class="fa fa-plus"></i> Add Product Categories</a>
                                
@@ -69,7 +74,7 @@
                                                     <a href="{{route('editproductcategory',$category->id)}}" class="btn btn-primary btn-sm rounded-0" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-edit"></i></a>
                                                     </li>
                                                     <li class="category-inline-item">
-                                                    <a href="{{url('/admin/delete_product',$category->id)}}" class="btn btn-danger btn-sm rounded-0"  onclick="return confirm('Are You Sure to delete this property?')" data-toggle="tooltip" data-placement="top" title="Add"><i class="fa fa-trash"></i></a>
+                                                    <a href="{{url('/admin/deletecat',$category->id)}}" class="btn btn-danger btn-sm rounded-0"  onclick="return confirm('Are You Sure to delete this property?')" data-toggle="tooltip" data-placement="top" title="Add"><i class="fa fa-trash"></i></a>
                                                     </li>
                                                 </td>
                                             </tr>

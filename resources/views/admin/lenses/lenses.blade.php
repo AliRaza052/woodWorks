@@ -3,13 +3,13 @@
 
 <div class="row page-titles">
                 <div class="col-md-5 align-self-center">
-                    <h3 class="text-themecolor">Products</h3>
+                    <h3 class="text-themecolor">Lens</h3>
                 </div>
                 <div class="col-md-7 align-self-center">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
                         <li class="breadcrumb-item">Pages</li>
-                        <li class="breadcrumb-item active">Product Types</li>
+                        <li class="breadcrumb-item active">Lens</li>
                     </ol>
                 </div>
                 <div>
@@ -26,8 +26,13 @@
 
                         <div class="card">
                             <div class="card-body">
+                                @if(session('deleted'))
+                                <div class="alert alert-danger">
+                                    {{session('deleted')}}
+                                </div>
+                                @endif
 
-                                <a href="{{url('admin/addtype')}}" class="btn btn-success btn-sm rounded-0" data-toggle="tooltip" data-placement="top" title="Add"><i class="fa fa-plus"></i> Add Product Types</a>
+                                <a href="{{url('admin/addlense')}}" class="btn btn-success btn-sm rounded-0" data-toggle="tooltip" data-placement="top" title="Add"><i class="fa fa-plus"></i> Add Lens</a>
 
                         <h4 class="card-title">Data</h4>
 
@@ -38,37 +43,40 @@
                                             <th>#</th>
                                             <th>Name</th>
                                             <th>Description</th>
-
-
+                                            <th>Type</th>
+                                            <th>Product ID</th>
                                             <th>Action</th>
                                         </tr>
                                         </thead>
                                         <tfoot>
                                             <tr>
-                                            <th>#</th>
+                                             <th>#</th>
                                             <th>Name</th>
                                             <th>Description</th>
-
+                                            <th>Type</th>
+                                            <th>Product ID</th>
                                             <th>Action</th>
                                             </tr>
                                         </tfoot>
                                         <tbody>
-                                        @isset($types)
+                                        @isset($lenses)
                                         @php
                                         $count=1;
 @endphp
-                                        @foreach($types as $type)
+                                        @foreach($lenses as $lense)
 
                                             <tr>
                                             <td>{{$count++}}</td>
-                                                <td>{{$type->name}}</td>
-                                                <td>{{$type->description}}</td>
+                                                <td>{{$lense->name}}</td>
+                                                <td>{{$lense->description}}</td>
+                                                 <td>{{$lense->type}}</td>
+                                                 <td>{{$lense->product_id}}</td>
                                                 <td>
                                                     <li class="category-inline-item">
-                                                    <a href="{{route('editproducttype',$type->id)}}" class="btn btn-primary btn-sm rounded-0" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-edit"></i></a>
+                                                    <a href="{{route('editlense',$lense->id)}}" class="btn btn-primary btn-sm rounded-0" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-edit"></i></a>
                                                     </li>
                                                     <li class="category-inline-item">
-                                                    <a href="{{url('/admin/deletetype',$type->id)}}" class="btn btn-danger btn-sm rounded-0"  onclick="return confirm('Are You Sure to delete this Product Type?')" data-toggle="tooltip" data-placement="top" title="Add"><i class="fa fa-trash"></i></a>
+                                                    <a href="{{url('/admin/deletelense',$lense->id)}}" class="btn btn-danger btn-sm rounded-0"  onclick="return confirm('Are You Sure to delete this Product Type?')" data-toggle="tooltip" data-placement="top" title="Add"><i class="fa fa-trash"></i></a>
                                                     </li>
                                                 </td>
                                             </tr>

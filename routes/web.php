@@ -52,6 +52,7 @@ Route::get('admin/addcategory','CategoryController@addcategory')->name('addcateg
 Route::post('admin/postcategory','CategoryController@addproductcategory')->name('postcategory');
 Route::get('admin/editproductcategory/{id}','CategoryController@editproductcategory')->name('editproductcategory');
 Route::post('admin/updateproductcategory/{id}','CategoryController@updateproduct')->name('updateproductcategory');
+Route::get('admin/deletecat/{id}','CategoryController@deleteCategory')->name('deletecat');
 
 Route::get('admin/product_types','ProductTypeController@index');
 Route::get('admin/addtype','ProductTypeController@addType')->name('addtype');
@@ -59,3 +60,11 @@ Route::post('admin/posttype','ProductTypeController@addproductType')->name('post
 Route::get('admin/editproducttype/{id}','ProductTypeController@editproductType')->name('editproducttype');
 Route::post('admin/updateproducttype/{id}','ProductTypeController@updateproductType')->name('updateproducttype');
 Route::get('admin/deletetype/{id}','ProductTypeController@deleteType')->name('deletetype');
+
+
+Route::get('admin/lenses','LensesController@index');
+Route::get('admin/addlense','LensesController@addLense')->name('addlense');
+Route::post('admin/postlense','LensesController@postLense')->name('postlense');
+Route::get('admin/editlense/{id}','LensesController@editlens')->name('editlense');
+Route::post('admin/updatelense/{id}','LensesController@updateLense')->name('updatelense');
+Route::get('admin/deletelense/{id}','LensesController@deleteLense')->name('deletelense');

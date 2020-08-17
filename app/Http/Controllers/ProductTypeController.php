@@ -10,7 +10,6 @@ class ProductTypeController extends Controller
     public function index()
     {
     	$types = ProductType::all();
-    	
 
         return view('admin.product_types.product_types',compact('types'));
 
