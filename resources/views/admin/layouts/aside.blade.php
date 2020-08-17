@@ -52,6 +52,15 @@
                         </li>
 
                         <li class="nav-item">
+							<a href="{{url('admin/product_types')}}" class="nav-link {{ request()->is('admin/product_types') ? 'active' : '' }}">
+								<i class="icon-file-text3"></i>
+								<span>
+									Product Types
+								</span>
+							</a>
+                        </li>
+
+                        <li class="nav-item">
 							<a href="{{url('admin/category')}}" class="nav-link {{ request()->is('admin/category') ? 'active' : '' }}">
 								<i class="icon-file-text3"></i>
 								<span>
