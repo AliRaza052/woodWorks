@@ -2,21 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Products;
 use Illuminate\Http\Request;
 use App\User;
-<<<<<<< HEAD
 // use App\AdminLog;
 // use App\Property;
-=======
->>>>>>> master
 use Hash;
 use Validator;
 use Session;
 use Auth;
 use Redirect;
 use Carbon\Carbon;
-<<<<<<< HEAD
 use App\Agency;
 // use App\SubscriptionPlans;
 class AdminController extends Controller
@@ -27,15 +22,6 @@ class AdminController extends Controller
     }
     public function addUser(){
        
-=======
-class AdminController extends Controller
-{
-    public function index(){
-        return view('admin.login');
-    }
-    public function addUser(){
-
->>>>>>> master
         return view('admin.user.add_user');
     }
     public function userProfile($id)
@@ -65,7 +51,6 @@ class AdminController extends Controller
 
             if ($validator->fails()) {
                 return back()->withInput()->with(['errors' => $validator->errors()]);
-<<<<<<< HEAD
             }
             else{
 
@@ -81,23 +66,6 @@ class AdminController extends Controller
 
         }
     
-=======
-            }
-            else{
-
-                    $user=User::create([
-                        'name' => $request->name,
-                        'email' => $request->email,
-                        'password' => Hash::make($request->password),
-                        'type'=> $request->type,
-                    ]);
-                }
-               return redirect()->route('list_users')->with('added_user','User Added Successfully');
-            }
-
-        }
-
->>>>>>> master
     public function editUser($id)
     {
             $user = User::where('id',$id)->get()->first();
@@ -146,7 +114,6 @@ class AdminController extends Controller
 
     }
     public function editAdmin($id){
-<<<<<<< HEAD
             $admin = User::where('type','admin')->where('id',$id)->get()->first();
             // dd($admin);
             return view('admin.edit_account',compact('admin'));
@@ -171,27 +138,10 @@ class AdminController extends Controller
         $admin->name = $request->input('name');
         $admin->email = $request->input('email');
         $admin->phone = $request->input('phone');
-=======
-            $admin = User::where('type','super_admin')->orWhere('type','admin')->where('id',$id)->get()->first();
-            return view('admin.edit_account',compact('admin'));
-    }
-    public function dashboard(){
-        $total_products = Products::all()->count();
-        $total_users = User::where('type','!=','super_admin')->where('type','!=','admin')->count();
-        // $admin = User::where('type','admin')->get()->first();
- return view('admin.dashboard',compact('total_products','total_users'));
-    }
-    public function updateAdmin(Request $request,$id)
-    {
-        $admin = User::findorFail($id);
-        $admin->name = $request->input('name');
-        $admin->email = $request->input('email');
->>>>>>> master
         if($request->input('password'))
         {
             $admin->password = Hash::make($request->input('password'));
         }
-<<<<<<< HEAD
          $this->validate($request, [
             'image' => 'required',
             'image.*' => 'mimes:png,jpg,jpeg',
@@ -214,9 +164,6 @@ class AdminController extends Controller
             $log->task_performed = "Admin updated his/her Profile";
             $log->save();
         }
-=======
-        $admin->save();
->>>>>>> master
 
         return redirect()->back()->with('success','Profile Updated Succesfully');
     }
@@ -235,7 +182,6 @@ class AdminController extends Controller
                 ->withErrors($validator)
                 ->withInput();
             }else {
-<<<<<<< HEAD
                 $data = User::where([['email', '=', $request->email], ['type', '=', 'admin']])->first();
                 if ($data) {
 
@@ -255,28 +201,6 @@ class AdminController extends Controller
 
         }
 
-=======
-                $data = User::where([['email', '=', $request->email], ['type', '=', 'super_admin']])
-                ->orWhere([['email', '=', $request->email], ['type', '=', 'admin']])->first();
-                if ($data) {
-
-                    if (\Hash::check($request->password, $data->password)) {
-
-                        Auth::attempt(['email' => $request->email, 'password' => $request->password]);
-                        return redirect('/admin/dashboard');
-                    } else {
-                        Session::flash('login_feedback', 'Invalid User.');
-                        return back()->withErrors($validator)->withInput();
-                    }
-                } else {
-                    Session::flash('login_feedback', 'Provided credentials are incorrect. Please try again');
-                    return back()->withErrors($validator)->withInput();
-                }
-            }
-
-        }
-
->>>>>>> master
         public function users(){
             $users = User::where('type','!=','super_admin')->get();
             return view('admin.user.users',compact('users'));
@@ -285,7 +209,6 @@ class AdminController extends Controller
         public function deleteuser($id){
             $del=User::find($id);
             $del->delete();
-<<<<<<< HEAD
             
             
             return redirect()->back()->with('delete_user','User Has been removed by admin');
@@ -296,18 +219,6 @@ class AdminController extends Controller
         public function logout(){
             if(Auth::check()){
                 if(Auth::user()->type=="admin"){
-=======
-
-
-            return redirect()->back()->with('delete_user','User Has been removed by admin');
-       }
-
-
-
-        public function logout(){
-            if(Auth::check()){
-                if(Auth::user()->type=="super_admin" ||Auth::user()->type=="admin"){
->>>>>>> master
                     Auth::logout();
             Session::flush();
             return Redirect::to('/admin/login');

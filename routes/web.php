@@ -1,7 +1,6 @@
 
 <?php
 
-use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,11 +29,8 @@ Route::get('/sunglasses','SunGlassesController@sunglasses');
 
 
 // Admin Routes
-Route::get('admin/login','AdminController@index')->name('admin_login');
-Route::post('admin/postlogin','AdminController@adminlogin');
-Route::get('admin/edit_admin/{id}','AdminController@editAdmin')->name('edit_admin');
-Route::post('admin/update_admin/{id}','AdminController@updateAdmin')->name('update_admin');
-Route::get('admin/logout','AdminController@logout')->name('logout');
+Route::get('admin','AdminController@index')->name('admin_login');
+Route::post('admin/login','AdminController@adminlogin');
 Route::get('admin/dashboard','AdminController@dashboard');
 Route::get('admin/adduser','AdminController@addUser');
 Route::post('admin/addnewuser','AdminController@addNewUser');
@@ -72,7 +68,6 @@ Route::post('admin/postlense','LensesController@postLense')->name('postlense');
 Route::get('admin/editlense/{id}','LensesController@editlens')->name('editlense');
 Route::post('admin/updatelense/{id}','LensesController@updateLense')->name('updatelense');
 Route::get('admin/deletelense/{id}','LensesController@deleteLense')->name('deletelense');
-<<<<<<< HEAD
 
 
 Route::get('admin/lensesmetrial','LensMetrialController@index');
@@ -88,5 +83,3 @@ Route::post('admin/postprescription','PrescriptionTypeController@postLense')->na
 Route::get('admin/editlense/{id}','PrescriptionTypeController@editlens')->name('editlense');
 Route::post('admin/updateprescription/{id}','PrescriptionTypeController@updateLense')->name('updateprescription');
 Route::get('admin/deletelense/{id}','PrescriptionTypeController@deleteLense')->name('deletelense');
-=======
->>>>>>> master

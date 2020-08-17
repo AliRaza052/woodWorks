@@ -58,7 +58,6 @@
 								<i class="icon-file-text3"></i>
 								<span>
 									Product Types
-<<<<<<< HEAD
 								</span>
 							</a>
                         </li>
@@ -71,13 +70,10 @@
 								<span>
 									Product Category
 									{{-- <span class="d-block font-weight-normal opacity-50">No active orders</span> --}}
-=======
->>>>>>> master
 								</span>
 							</a>
                         </li>
 
-<<<<<<< HEAD
                         <li class="nav-item">
 							<a href="{{url('admin/lenses')}}" class="nav-link {{ request()->is('admin/lenses') ? 'active' : '' }}">
 								<i class="icon-file-text3"></i>
@@ -92,32 +88,15 @@
 								<i class="icon-file-text3"></i>
 								<span>
 									 Lens Metrial
-=======
-                        
-
-                        <li class="nav-item">
-							<a href="{{url('admin/category')}}" class="nav-link {{ request()->is('admin/category') ? 'active' : '' }}">
-								<i class="icon-file-text3"></i>
-								<span>
-									Product Category
-									{{-- <span class="d-block font-weight-normal opacity-50">No active orders</span> --}}
->>>>>>> master
 								</span>
 							</a>
                         </li>
 
                         <li class="nav-item">
-<<<<<<< HEAD
 							<a href="{{url('admin/prescription')}}" class="nav-link {{ request()->is('admin/prescription') ? 'active' : '' }}">
 								<i class="icon-file-text3"></i>
 								<span>
 									 Prescription Type
-=======
-							<a href="{{url('admin/lenses')}}" class="nav-link {{ request()->is('admin/lenses') ? 'active' : '' }}">
-								<i class="icon-file-text3"></i>
-								<span>
-									 Lenses
->>>>>>> master
 								</span>
 							</a>
                         </li>
