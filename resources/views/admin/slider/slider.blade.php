@@ -65,6 +65,7 @@
                                             <td>{{$count++}}</td>
                                                 <td>{{$type->name}}</td>
                                                 <td>{{$type->description}}</td>
+                                                <td>{{$type->product_id}}</td>
                                                 <td>
                                                     <li class="category-inline-item">
                                                     <a href="{{route('editproducttype',$type->id)}}" class="btn btn-primary btn-sm rounded-0" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-edit"></i></a>

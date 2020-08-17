@@ -96,3 +96,4 @@ Route::post('admin/postslider','SliderController@addslidertype')->name('postslid
 Route::get('admin/editproducttype/{id}','SliderController@editsliderType')->name('editproducttype');
 Route::post('admin/updateslider/{id}','SliderController@updatesliderType')->name('updateslider');
 Route::get('admin/deletetype/{id}','SliderController@deleteslider')->name('deletetype');
+Route::post('admin/getproductdetails','SliderController@getProductDetails')->name('get_product');

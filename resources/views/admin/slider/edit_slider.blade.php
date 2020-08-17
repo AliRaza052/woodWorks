@@ -87,12 +87,30 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="col-sm-6">
+                            <label>Product ID</label>    
+                            <select class="form-control" name="product_id">
+                                <option>Select Product ID</option>
+                                @foreach($products as $product)
+                                <option value="{{$product->id}}" @if($product_types->product_id == $product->id) selected  @endif>{{$product->name}}</option>
+                                @endforeach
+                            </select>                       
+                          
+                        </div>
+                        <div class="col-sm-6">
+                            <label>Category</label>
+                            <input type="text" name="category" value="{{$product_types->category}}" class="form-control" readonly />
+                        </div>
+                        <div class="col-sm-6">
+                            <label>Type</label>
+                            <input type="text" name="type" value="{{$product_types->product_type}}" class="form-control" readonly />
+                        </div>
 
 
                     </div>
                 </div>
                 <div class="d-flex justify-content-start align-items-center">
-                            <button type="submit" class="btn bg-blue ml-10">Update Product Type<i class="icon-paperplane ml-2"></i></button>
+                            <button type="submit" class="btn bg-blue ml-10">Update Slider<i class="icon-paperplane ml-2"></i></button>
                 </div>
 </form>
 </div>

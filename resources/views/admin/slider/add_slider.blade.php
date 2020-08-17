@@ -75,16 +75,31 @@
                             <label>Product Images</label>
                             <div class="dropzone dz-clickable primary-dropzone">
                                 <div class="dz-default dz-message" id='TextBoxesGroup'>
-                                    <input type="file" name="image[]" class="form-control" multiple id='textbox1' required />
-
-                            </div>
+                                    <input type="file" name="image[]" class="form-control" id='textbox1' required />
+                                </div>
+                        	</div>
                         </div>
-
-
-                    </div>
-                </div>
+                        <div class="col-sm-6">
+                            <label>Product ID</label>    
+                            <select class="form-control" name="product_id" id="product_id">
+                                <option>Select Product ID</option>
+                                @foreach($products as $product)
+                                <option value="{{$product->id}}">{{$product->name}}</option>
+                                @endforeach
+                            </select>                       
+                          
+                        </div>
+                        <div class="col-sm-6">
+                            <label>Category</label>
+                            <input type="text" name="category" id="category_id" class="form-control" readonly />
+                        </div>
+                        <div class="col-sm-6">
+                            <label>Type</label>
+                            <input type="text" name="type" id="type_id" class="form-control" readonly />
+                        </div>
+                </div></br>
                 <div class="d-flex justify-content-start align-items-center">
-                            <button type="submit" class="btn bg-blue ml-10">Add Product Type<i class="icon-paperplane ml-2"></i></button>
+                            <button type="submit" class="btn bg-blue ml-10">Add Slider<i class="icon-paperplane ml-2"></i></button>
                 </div>
 </form>
 </div>
@@ -92,107 +107,30 @@
 </div>
 @endsection
 @push('scripts')
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZQTPhU5D_kiIXI2aoF6QYOPVocddWclE&libraries=places&callback=initAutocomplete" async defer></script>
 
 <script type="text/javascript">
-	function initAutocomplete() {
-		var input = document.getElementById('location_lo');
-		// var options = {
-		//   types: ['(regions)'],
-		//   componentRestrictions: {country: "IN"}
-		// };
-		var options = {}
+	$('#product_id').change(function(){
+		var product_id = $(this).val();
+		if(product_id)
+		{
+			 $.ajax({
 
-		var autocomplete = new google.maps.places.Autocomplete(input, options);
-		autocomplete.setComponentRestrictions({
-			'country': ['us', 'pk', 'au']
-		});
-		google.maps.event.addListener(autocomplete, 'place_changed', function() {
-			var place = autocomplete.getPlace();
-			var lat = place.geometry.location.lat();
-			var lng = place.geometry.location.lng();
-			var placeId = place.place_id;
-			// to set city name, using the locality param
-			var componentForm = {
-				//   street_number: 'short_name',
-				//   route: 'long_name',
-				locality: 'long_name',
-				administrative_area_level_1: 'short_name',
-				country: 'long_name',
-				//   postal_code: 'short_name'
-			};
-			for (var i = 0; i < place.address_components.length; i++) {
-				var addressType = place.address_components[i].types[0];
-				if (componentForm[addressType]) {
-					var val = place.address_components[i][componentForm[addressType]];
-					document.getElementById(addressType).value = val;
-				}
-			}
-			document.getElementById("lat").value = lat;
-			document.getElementById("lng").value = lng;
+		           type:'POST',
 
-		});
-	}
-</script>
+		           url:'{{route('get_product')}}',
 
-<script type="text/javascript">
-	$(document).ready(function() {
-		$('.propertytype').change(function() {
-			if ($(this).val() == "Plots") {
-				$('.bedroom').hide();
-				$('.bathroom').hide();
-			} else {
-				$('.bedroom').show();
-				$('.bathroom').show();
-			}
-		});
+		           data:{productid:product_id,_token: '{{csrf_token()}}'},
+
+		           success:function(data){
+
+		              $('#category_id').val(data.product_category);
+		              $('#type_id').val(data.type);
+		           }
+
+        });
+		}
 	});
-</script>
-<script type="text/javascript">
-	$(document).ready(function() {
-
-		var counter = 2;
-
-		$("#addButton").click(function() {
-
-			if (counter > 7) {
-				alert("Only 7 files allow");
-				return false;
-			}
-
-			var newTextBoxDiv = $(document.createElement('div'))
-				.attr("id", 'TextBoxDiv' + counter);
-
-			newTextBoxDiv.after().html('<label>Image #' + counter + ' : </label>' +
-				'<input type="file" class="form-control" name="filename[]" multiple id="textbox' + counter + '" value="" >');
-
-			newTextBoxDiv.appendTo("#TextBoxesGroup");
-
-
-			counter++;
-		});
-
-		$("#removeButton").click(function() {
-			if (counter == 1) {
-				alert("No more files to remove");
-				return false;
-			}
-
-			counter--;
-
-			$("#TextBoxDiv" + counter).remove();
-
-		});
-
-		$("#getButtonValue").click(function() {
-
-			var msg = '';
-			for (i = 1; i < counter; i++) {
-				msg += "\n Textbox #" + i + " : " + $('#textbox' + i).val();
-			}
-			alert(msg);
-		});
-	});
+	
 </script>
 
 
