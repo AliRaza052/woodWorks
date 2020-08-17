@@ -2,13 +2,13 @@
 @section('content')
 <div class="row page-titles">
                 <div class="col-md-5 align-self-center">
-                    <h3 class="text-themecolor">Produts</h3>
+                    <h3 class="text-themecolor">Products</h3>
                 </div>
                 <div class="col-md-7 align-self-center">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
                         <li class="breadcrumb-item">pages</li>
-                        <li class="breadcrumb-item active">Produts Listing</li>
+                        <li class="breadcrumb-item active">productings</li>
                     </ol>
                 </div>
                 <div>
@@ -20,63 +20,65 @@
                 <!-- Start Page Content -->
                 <!-- ============================================================== -->
                 <div class="row">
+
                     <div class="col-12">
+                         
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title">Data</h4>
+                                 
+                                <a href="{{url('admin/newproduct')}}" class="btn btn-success btn-sm rounded-0" data-toggle="tooltip" data-placement="top" title="Add"><i class="fa fa-plus"></i> Add New Product</a>
+                               
+                        <h4 class="card-title">Data</h4>
 
                                 <div class="table-responsive m-t-40">
                                     <table id="example23" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
                                         <thead>
                                             <tr>
                                             <th>#</th>
-                                                <th>Purpose</th>
-                                                <th>Type</th>
-                                                <th>Title</th>
-                                                <th>Price</th>
-                                                <th>Country</th>
-                                                <th>City</th>
-                                                <th>Action</th>
-                                            </tr>
+                                            <th>Name</th>
+                                            <th>Color</th>
+                                            <th>Type</th>
+                                            <th>Category</th>
+                                            <th>Price</th>
+                                            <th>Action</th>
+                                        </tr>
                                         </thead>
                                         <tfoot>
                                             <tr>
                                             <th>#</th>
-                                            <th>Purpose</th>
-                                                <th>Type</th>
-                                                <th>Title</th>
-                                                <th>Price</th>
-                                                <th>Country</th>
-                                                <th>City</th>
-                                                <th>Action</th>
+                                            <th>Name</th>
+                                            <th>Color</th>
+                                            <th>Type</th>
+                                            <th>Category</th>
+                                            <th>Price</th>
+                                            <th>Action</th>
                                             </tr>
                                         </tfoot>
                                         <tbody>
-                                        @isset($lists)
+                                        @isset($products)
                                         @php
                                         $count=1;
 @endphp
-                                        @foreach($lists as $list)
+                                        @foreach($products as $product)
                                             <tr>
                                             <td>{{$count++}}</td>
-                                                <td>{{$list->purpose}}</td>
-                                                <td>{{$list->propertytype}}</td>
-                                                <td>{{$list->title}}</td>
-                                                <td>{{$list->price}}</td>
-                                                <td>{{$list->country}}</td>
-                                                <td>{{$list->city}}</td>
+                                                <td>{{$product->name}}</td>
+                                                <td>{{$product->color}}</td>
+                                                <td>{{$product->type}}</td>
+                                                <td>{{$product->category}}</td>
+                                                <td>${{$product->price}}</td>
                                                 <td>
-                                                    {{-- <li class="list-inline-item">
-                                                        <a href="" class="btn btn-success btn-sm rounded-0" data-toggle="tooltip" data-placement="top" title="Add"><i class="fa fa-eye"></i></a>
-                                                    </li> --}}
-                                                    <li class="list-inline-item">
-                                                    <a href="" class="btn btn-primary btn-sm rounded-0" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-edit"></i></a>
+                                                    <li class="product-inline-item">
+                                                    <a href="{{route('edit_product',$product->id)}}" class="btn btn-primary btn-sm rounded-0" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-edit"></i></a>
                                                     </li>
-                                                    <li class="list-inline-item">
-                                                    <a href="" class="btn btn-danger btn-sm rounded-0"  onclick="return confirm('Are You Sure to delete this property?')" data-toggle="tooltip" data-placement="top" title="Add"><i class="fa fa-trash"></i></a>
+                                                    <li class="product-inline-item">
+                                                    <a href="{{url('/admin/delete_product',$product->id)}}" class="btn btn-danger btn-sm rounded-0"  onclick="return confirm('Are You Sure to delete this property?')" data-toggle="tooltip" data-placement="top" title="Add"><i class="fa fa-trash"></i></a>
                                                     </li>
                                                 </td>
                                             </tr>
+
+
+
                                             @endforeach
                                             @endisset
 

@@ -45,9 +45,7 @@
                                             <tr>
                                                 <th>Name</th>
                                                 <th>Email</th>
-                                                <th>Phone</th>
-                                                <th>Coutry</th>
-                                                <th>City</th>
+                                                <th>Type</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
@@ -55,9 +53,7 @@
                                             <tr>
                                                 <th>Name</th>
                                                 <th>Email</th>
-                                                <th>Phone</th>
-                                                <th>Coutry</th>
-                                                <th>City</th>
+                                                <th>Type</th>
                                                 <th>Action</th>
                                             </tr>
                                         </tfoot>
@@ -67,9 +63,8 @@
                                             <tr>
                                                 <td>{{$user->name}}</td>
                                                 <td>{{$user->email}}</td>
-                                                <td>{{$user->phone}}</td>
-                                                <td>{{$user->country}}</td>
-                                                <td>{{$user->city}}</td>
+                                                <td>{{$user->type}}</td>
+                                                
                                                 <td>
                                                     <ul class="list-inline m-0">
                                                         <li class="list-inline-item">

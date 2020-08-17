@@ -18,7 +18,7 @@
           <div class="row ApRow  "style="">
             <div class="col-xl-2 col-lg-2 col-md-12 col-sm-12 col-xs-12 col-sp-12 logo-column ApColumn ">
               <div class="header_logo">
-                <a href="{{url('/')}}">
+                <a href="https://apollotran.com/demo/at_glasses_demo/">
                   <img class="logo img-fluid" src="{{asset('/')}}/img/logostillo.png" style="height: 200px;width: 300px; position: relative; margin-top: -85px;" alt="At Glasses logo">
                 </a>
               </div>
@@ -520,7 +520,7 @@
 
 <div class="modal fade" id="eyeglasses" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content" style="width: 800px;position: relative;">
+    <div class="modal-content" style="width: 100%;position: relative;">
       <!-- <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLongTitle">Sunglasses</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -532,7 +532,7 @@
        <div class="wrapper" style="background: url('{{asset('/')}}/themes/csss/modules/appagebuilder/images/bg2_h6.jpg') repeat-x center top">
               <div class="container">
               <div class="row ApRow  has-bg bg-fullwidth-container" style="padding-top: 25px">
-                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6 col-sp-12  ApColumn ">
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6 col-sp-6  ApColumn ">
                   <div id="image-form_12436769327409448" class="block effect-flash banner-st2-left ApImage">
                     <a href="menglasses" >
                       <img src="{{asset('/')}}/themes/csss/modules/appagebuilder/images/banner4_h6.jpg" class="img-fluid " title="" alt="banner" style=" width:auto; height:auto; " />
@@ -542,7 +542,7 @@
                     </div>
                   </div>
                 </div><!-- @file modules\appagebuilder\views\templates\hook\ApColumn -->
-                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6 col-sp-12  ApColumn ">
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6 col-sp-6  ApColumn ">
                   <div id="image-form_1612629365992643" class="block effect-flash banner-st2-right ApImage">
                     <a href="womenglasses" >
                       <img src="{{asset('/')}}/themes/csss/modules/appagebuilder/images/banner3_h6.jpg" class="img-fluid " title="" alt="banner" style=" width:auto; height:auto" />
@@ -563,7 +563,7 @@
 
 <div class="modal fade" id="sunglasses" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content" style="width: 800px;position: relative;">
+    <div class="modal-content" style="width: 100%;position: relative;">
       <!-- <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLongTitle">Sunglasses</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -574,7 +574,7 @@
        <div class="wrapper" style="background: url('{{asset('/')}}/themes/csss/modules/appagebuilder/images/bg2_h6.jpg') repeat-x center top">
               <div class="container">
               <div class="row ApRow  has-bg bg-fullwidth-container" style="padding-top: 25px">
-                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6 col-sp-12  ApColumn ">
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6 col-sp-6  ApColumn ">
                   <div id="image-form_12436769327409448" class="block effect-flash banner-st2-left ApImage">
                     <a href="menglasses" >
                       <img src="{{asset('/')}}/themes/csss/modules/appagebuilder/images/banner4_h6.jpg" class="img-fluid " title="" alt="banner" style=" width:auto; height:auto" />
@@ -584,7 +584,7 @@
                     </div>
                   </div>
                 </div><!-- @file modules\appagebuilder\views\templates\hook\ApColumn -->
-                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6 col-sp-12  ApColumn ">
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6 col-sp-6  ApColumn ">
                   <div id="image-form_1612629365992643" class="block effect-flash banner-st2-right ApImage">
                     <a href="womenglasses" >
                       <img src="{{asset('/')}}/themes/csss/modules/appagebuilder/images/banner3_h6.jpg" class="img-fluid " title="" alt="banner" style=" width:auto; height:auto" />

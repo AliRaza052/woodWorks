@@ -1,4 +1,0 @@
-[11-Aug-2020 23:14:17 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Auth\User' not found in /home/dingg31bifx8/public_html/app/User.php:9
-Stack trace:
-#0 {main}
-  thrown in /home/dingg31bifx8/public_html/app/User.php on line 9

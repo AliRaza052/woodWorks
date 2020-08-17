@@ -32,20 +32,57 @@
 								</span>
 							</a>
                         </li>
-						<li class="nav-item nav-item-submenu">
-							<a href="javascript::void()" class="nav-link {{ request()->is('admin/agents') ? 'active' : '' }} {{ request()->is('admin/users') ? 'active' : '' }}"><i class="icon-users"></i> <span>Users</span></a>
-							<ul class="nav nav-group-sub" data-submenu-title="Layouts" {{ request()->is('admin/users') ? 'style=display:block;' : '' }} {{ request()->is('admin/agents') ? 'style=display:block;' : '' }}>
-								<li class="nav-item "><a href="" class="nav-link {{ request()->is('admin/users') ? 'active' : '' }}"><i class="icon-user"></i>Users</a></li>
-							</ul>
-                        </li>
+
                         <li class="nav-item">
-							<a href="{{route('products')}}" class="nav-link {{ request()->is('admin/products') ? 'active' : '' }}">
-								<i class="icon-home4"></i>
+							<a href="{{url('admin/user')}}" class="nav-link {{ request()->is('admin/user') ? 'active' : '' }}">
+								<i class="icon-users"></i>
 								<span>
-									Products
+									Users
+									{{-- <span class="d-block font-weight-normal opacity-50">No active orders</span> --}}
 								</span>
 							</a>
                         </li>
+
+                        <li class="nav-item">
+							<a href="{{url('admin/product_listings')}}" class="nav-link {{ request()->is('admin/product_listings') ? 'active' : '' }}">
+								<i class="icon-file-text3"></i>
+								<span>
+									Products
+									{{-- <span class="d-block font-weight-normal opacity-50">No active orders</span> --}}
+								</span>
+							</a>
+                        </li>
+
+                        <li class="nav-item">
+							<a href="{{url('admin/product_types')}}" class="nav-link {{ request()->is('admin/product_types') ? 'active' : '' }}">
+								<i class="icon-file-text3"></i>
+								<span>
+									Product Types
+								</span>
+							</a>
+                        </li>
+
+                        
+
+                        <li class="nav-item">
+							<a href="{{url('admin/category')}}" class="nav-link {{ request()->is('admin/category') ? 'active' : '' }}">
+								<i class="icon-file-text3"></i>
+								<span>
+									Product Category
+									{{-- <span class="d-block font-weight-normal opacity-50">No active orders</span> --}}
+								</span>
+							</a>
+                        </li>
+
+                        <li class="nav-item">
+							<a href="{{url('admin/lenses')}}" class="nav-link {{ request()->is('admin/lenses') ? 'active' : '' }}">
+								<i class="icon-file-text3"></i>
+								<span>
+									 Lenses
+								</span>
+							</a>
+                        </li>
+
 
                     	<!-- /main -->
 
